@@ -1,24 +1,27 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-
 public class TriangleTestProject {
     public static String expected = "The sides of a triangle cannot be equal or less then 0";
+    public static String errorMsg = "The square of the triangle cannot be measured.";
 
     @Test
     public void trianglePositiveTest() throws Exception {
         Assert.assertTrue(TriangleMeasurements.checkSides(5, 3, 6));
+        System.out.println(TriangleMeasurements.measureTriangleSquare(5,3,6));
     }
 
     @Test
     public void triangleEqualSidesPositiveTest() throws Exception {
         Assert.assertTrue(TriangleMeasurements.checkSides(3, 3, 3));
+        System.out.println(TriangleMeasurements.measureTriangleSquare(3,3,3));
     }
 
     @Test
     public void triangle2SidesEqualNegativeTest() {
         try {
             Assert.assertFalse(TriangleMeasurements.checkSides(1, 1, 2));
+            System.out.println(errorMsg);
         } catch (Exception e) {
             Assert.fail(e.getMessage());
         }
@@ -31,6 +34,7 @@ public class TriangleTestProject {
         } catch (Exception e) {
             String actual = e.getMessage();
             Assert.assertEquals(expected, actual);
+            System.out.println(errorMsg);
         }
     }
 
@@ -41,6 +45,7 @@ public class TriangleTestProject {
         } catch (Exception e) {
             String actual = e.getMessage();
             Assert.assertEquals(expected, actual);
+            System.out.println(errorMsg);
         }
     }
 
@@ -51,6 +56,7 @@ public class TriangleTestProject {
         } catch (Exception e) {
             String actual = e.getMessage();
             Assert.assertEquals(expected, actual);
+            System.out.println(errorMsg);
         }
     }
 
@@ -61,6 +67,7 @@ public class TriangleTestProject {
         } catch (Exception e) {
             String actual = e.getMessage();
             Assert.assertEquals(expected, actual);
+            System.out.println(errorMsg);
         }
     }
 
@@ -71,6 +78,7 @@ public class TriangleTestProject {
         } catch (Exception e) {
             String actual = e.getMessage();
             Assert.assertEquals(expected, actual);
+            System.out.println(errorMsg);
         }
     }
 }

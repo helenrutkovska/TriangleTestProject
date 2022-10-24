@@ -6,4 +6,9 @@ public class TriangleMeasurements {
             throw new Exception("The sides of a triangle cannot be equal or less then 0");
         }
     }
+    public static double measureTriangleSquare(int a, int b, int c) {
+        int x = (a + b + c) / 2;
+        double S = Math.sqrt(x*(x-a)*(x-b)*(x-c));
+        return S;
+    }
 }
